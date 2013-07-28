@@ -1,0 +1,15 @@
+{
+  "name":"detect-cryptocoin",
+  "version": "0.0.1",
+  "repository": {
+    "type":"git",
+    "url":"git://github.com/pocesar/node-detect-cryptocoin.git"
+  },
+  "license":"MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "expect.js": "*"
+  }
+}
