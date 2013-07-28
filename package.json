@@ -5,6 +5,7 @@
     "type":"git",
     "url":"git://github.com/pocesar/node-detect-cryptocoin.git"
   },
+  "main":"lib/index.js",
   "license":"MIT",
   "dependencies": {
   },
