@@ -78,7 +78,7 @@ module.exports = {
         '1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu',
         '1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu',
         'QNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh'
-      ], null, true);
+      ], null, false);
 
       expect(detected).to.eql({
         'conflicts': {
