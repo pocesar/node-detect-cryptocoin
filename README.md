@@ -5,9 +5,8 @@ Detects which cryptcoin is the given cryptocoin address (starts with some coins 
 
 This isn't by any means accurate, it's a quick & dirty check, you have to resolve any conflicts by yourself.
 
-The addresses are checked using
 
-Contains `Util` code from [bitcoinjs-server](`https://github.com/bitcoinjs/bitcoinjs-server`)
+The addresses are checked using base58Check native module (currently doesn't work on Windows, so it's shim'ed)
 
 # Usage
 
@@ -79,8 +78,6 @@ detected.coins.HKK = {
 
 ```
 
-There's also a helper function, `dcc.valid`, it checks using `Base58Check` using Node.js `Buffers` (instead of Bignum/Bigint).
-It's not as performant, but it works in Windows.
 
 # Do you like it? Wanna support the development?
 
