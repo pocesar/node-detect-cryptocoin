@@ -72,7 +72,7 @@ module.exports = {
 
       expect(detected).to.eql({invalids:['QNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh'], conflicts:{}});
     },
-    'allow invalid if third paramter is true and list circular conflicts': function(){
+    'allow invalid if third paramter is false and list circular conflicts': function(){
       var detected = lib([
         '1GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
         '1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu',
