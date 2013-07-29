@@ -22,15 +22,14 @@ var detected = dcc([
     // You may narrow the function results by passing only the allowed list as the second parameter.
 
 console.log(detected);
-/**
- * yields:
- * {
- *   'BTC': ['1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu'],
- *   'LTC:  ['LW2kXiquqDu3GfpfBX2xNTSgjVmBPu6g3z'],
- *   'PPC': ['PNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh'],
- *   'XPM': ['ARKZ7uVE1YS19HC8jSq5xZGkr6YAzugWBv']
- * }
- */
+
+// yields:
+{
+  'BTC': ['1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu'],
+  'LTC': ['LW2kXiquqDu3GfpfBX2xNTSgjVmBPu6g3z'],
+  'PPC': ['PNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh'],
+  'XPM': ['ARKZ7uVE1YS19HC8jSq5xZGkr6YAzugWBv']
+}
 
 // add more coins using:
 
@@ -46,7 +45,7 @@ detected.coins.HKK = {
 // Check the 'conflicts' member for conflicts:
 
 {
-    'LTC:  ['LW2kXiquqDu3GfpfBX2xNTSgjVmBPu6g3z'],
+    'LTC':  ['LW2kXiquqDu3GfpfBX2xNTSgjVmBPu6g3z'],
     'PPC': ['PNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh'],
     'XPM': ['ARKZ7uVE1YS19HC8jSq5xZGkr6YAzugWBv'],
     'conflicts': {
