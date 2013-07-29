@@ -28,7 +28,9 @@ console.log(detected);
   'BTC': ['1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu'],
   'LTC': ['LW2kXiquqDu3GfpfBX2xNTSgjVmBPu6g3z'],
   'PPC': ['PNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh'],
-  'XPM': ['ARKZ7uVE1YS19HC8jSq5xZGkr6YAzugWBv']
+  'XPM': ['ARKZ7uVE1YS19HC8jSq5xZGkr6YAzugWBv'],
+  'conflicts': {},
+  'invalids': []
 }
 
 // add more coins using:
@@ -45,7 +47,7 @@ detected.coins.HKK = {
 // Check the 'conflicts' member for conflicts:
 
 {
-    'LTC':  ['LW2kXiquqDu3GfpfBX2xNTSgjVmBPu6g3z'],
+    'LTC': ['LW2kXiquqDu3GfpfBX2xNTSgjVmBPu6g3z'],
     'PPC': ['PNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh'],
     'XPM': ['ARKZ7uVE1YS19HC8jSq5xZGkr6YAzugWBv'],
     'conflicts': {
