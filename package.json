@@ -1,6 +1,7 @@
 {
   "name":"detect-cryptocoin",
-  "version": "0.0.7",
+  "version": "0.0.8",
+  "description": "Detects which cryptcoin is the given cryptocoin address (starts with some coins listed in CoinWarz.com that have working block explorers)",
   "repository": {
     "type":"git",
     "url":"git://github.com/pocesar/node-detect-cryptocoin.git"
