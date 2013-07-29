@@ -7,10 +7,23 @@
   },
   "main":"lib/index.js",
   "license":"MIT",
+  "keywords": [
+    "bitcoin",
+    "cryptocoin",
+    "detect",
+    "base58",
+    "base58check"
+  ],
   "dependencies": {
+    "base58-native": "*",
+    "lodash": "*"
   },
   "devDependencies": {
     "mocha": "*",
-    "expect.js": "*"
+    "expect.js": "*",
+    "jshint": "*"
+  },
+  "scripts": {
+    "test": "jshint lib && mocha test/test.js"
   }
 }
