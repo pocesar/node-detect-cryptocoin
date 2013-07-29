@@ -37,18 +37,23 @@ module.exports = {
 
       var detected = lib([
         'VNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh',
+        'VW2kXiquqDu3GfpfBX2xNTSgjVmBPu6g3z',
         'VW2kXiquqDu3GfpfBX2xNTSgjVmBPu6g3z'
       ], null, false);
 
       expect(detected.invalids.length).to.equal(0);
       expect(detected.INC.length).to.equal(2);
     },
-    'set invalid if doesnt exist'          : function (){
-      var detected = lib(['QNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh'], null, false);
+    'set invalid if doesnt exist and output unique' : function (){
+      var detected = lib([
+        'QNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh',
+        'QNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh',
+        'QNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh'
+      ], null, false);
 
       expect(detected.invalids.length).to.equal(1);
     },
-    'addresses should be unique': function(){
+    'valid addresses should be unique': function(){
       var detected = lib([
         '1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu',
         '1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu',
@@ -61,10 +66,45 @@ module.exports = {
       var detected = lib([
         '1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu',
         '1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu',
-        '1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu'
+        '1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu',
+        'QNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh'
       ], ['LTC']);
 
-      expect(detected).to.eql({invalids:[], conflicts:{}});
+      expect(detected).to.eql({invalids:['QNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh'], conflicts:{}});
+    },
+    'allow invalid if third paramter is true and list circular conflicts': function(){
+      var detected = lib([
+        '1GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+        '1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu',
+        '1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu',
+        'QNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh'
+      ], null, true);
+
+      expect(detected).to.eql({
+        'conflicts': {
+          BTC: {
+            TRC: ['1GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu'],
+            FRC: ['1GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu'],
+            DVC: ['1GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu']
+          },
+          TRC: {
+            BTC: ['1GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu'],
+            FRC: ['1GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu'],
+            DVC: ['1GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu']
+          },
+          FRC: {
+            BTC: ['1GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu'],
+            TRC: ['1GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu'],
+            DVC: ['1GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu']
+          },
+          DVC: {
+            BTC: ['1GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu'],
+            TRC: ['1GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu'],
+            FRC: ['1GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu']
+          }
+        },
+        invalids:['QNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh']
+      });
     }
   }
 };
