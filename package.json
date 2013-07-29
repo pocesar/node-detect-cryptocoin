@@ -1,6 +1,6 @@
 {
   "name":"detect-cryptocoin",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "repository": {
     "type":"git",
     "url":"git://github.com/pocesar/node-detect-cryptocoin.git"

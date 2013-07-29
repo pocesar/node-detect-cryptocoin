@@ -1,6 +1,6 @@
 var dcc = require('../lib');
 
-/*var detected = dcc([
+var detected = dcc([
     '1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu',
     'LW2kXiquqDu3GfpfBX2xNTSgjVmBPu6g3z',
     'PNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh',
@@ -8,6 +8,5 @@ var dcc = require('../lib');
     ], ['BTC','LTC','PPC','XPM','TRC','DVC','FRC']);
 
 console.log(detected);
-*/
 
-console.log(dcc.valid('1Q1pE5vPGEEMqRcVRMbtBK842Y6Pzo6nK9'));
+console.log(dcc.isValid('1Q1pE5vPGEEMqRcVRMbtBK842Y6Pzo6nK9'));

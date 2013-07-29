@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/pocesar/node-detect-cryptocoin.png)](https://travis-ci.org/pocesar/node-detect-cryptocoin)
+
+
 node-detect-cryptocoin
 ======================
 
@@ -19,7 +22,8 @@ var detected = dcc([
     'PNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh',
     'ARKZ7uVE1YS19HC8jSq5xZGkr6YAzugWBv'
     ], ['BTC','LTC','PPC','XPM']);
-    // You may narrow the function results by passing only the allowed list as the second parameter.
+    // You may narrow the function results by passing only the allowed/expected list as the second parameter.
+    // everything that isn't in this list is ignored
 
 console.log(detected);
 
@@ -35,7 +39,7 @@ console.log(detected);
 
 // add more coins using:
 
-detected.coins.HKK = {
+dcc.coins.HKK = {
     name: 'HongKongKoin',
     starts: ['h']
 };
@@ -77,6 +81,21 @@ detected.coins.HKK = {
 
 // If there are any invalids, they will go in 'invalids' member array
 
+// You may overwrite the original detect.isValid function with your own
+// so you may do your online / daemon check by yourself, it receives 3 arguments:
+// address, detected
+
+dcc.isValid = function(address, detected, list){
+    // you can access dcc.index that is the built index from the available coins
+
+    // detected is an array of possible coins
+    // the current list of allowed/expected coins
+
+    // return a boolean
+    return true;
+};
+
+// be a good citizen, just make sure to backup the original function :)
 ```
 
 

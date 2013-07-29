@@ -105,6 +105,18 @@ module.exports = {
         },
         invalids:['QNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh']
       });
+    },
+    'ovewrite isValid for side effects': function(){
+      lib.isValid = function(){ return false; };
+
+      var detected = lib([
+        '1GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+        '1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu',
+        '1PskTzQjmzqB2boz67AXsv4C5YNWN4xmhu',
+        'QNKZEkDf9eBSNebu2CcxHaGuma6wHuZEBh'
+      ]);
+
+      expect(detected.invalids.length).to.equal(3);
     }
   }
 };
