@@ -1,6 +1,6 @@
 {
   "name":"detect-cryptocoin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type":"git",
     "url":"git://github.com/pocesar/node-detect-cryptocoin.git"
@@ -12,7 +12,15 @@
     "cryptocoin",
     "detect",
     "base58",
-    "base58check"
+    "base58check",
+    "litecoin",
+    "altcoin",
+    "novacoin",
+    "ppcoin",
+    "primecoin",
+    "franko",
+    "terracoin",
+    "worldcoin"
   ],
   "dependencies": {
     "base58-native": "*",
