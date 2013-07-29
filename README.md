@@ -8,6 +8,33 @@ Detects which cryptcoin is the given cryptocoin address (starts with some coins 
 
 This isn't by any means accurate, it's a quick & dirty check, you have to resolve any conflicts by yourself.
 
+Coins supported out-of-the-box:
+
+* Bitcoin
+* Noirbits
+* Terracoin
+* Krugercoin
+* Bottlecaps
+* Fastcoin
+* Digital Coin
+* BBQCoin
+* Bitbar
+* Novacoin
+* Litecoin
+* Worldcoin
+* Feathercoin
+* Franko
+* Mincoin
+* Stablecoin
+* Megacoin
+* PPCoin
+* Hypercoin
+* Freicoin
+* Alphacoin
+* Namecoin
+* Ixcoin
+* Devcoin
+* Primecoin
 
 The addresses are checked using base58Check native module (currently doesn't work on Windows, so it's shim'ed)
 
